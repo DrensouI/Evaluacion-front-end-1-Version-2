@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #111;
+}
+/* Navbar */
+.navbar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-box {
+    background: red;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.logo h2 {
+    font-size: 28px;
+}
+
+.logo p {
+    font-size: 14px;
+    color: gray;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.btn-nav {
+    background: red;
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+}
+
+/* Hero principal */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("fondo.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(255, 0, 0, 0.25)
+    );
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    max-width: 900px;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+    background: red;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.hero p {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 18px;
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #111;
+}
+
+/* Navbar */
+.navbar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-box {
+    background: red;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.logo h2 {
+    font-size: 28px;
+}
+
+.logo p {
+    font-size: 14px;
+    color: gray;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.btn-nav {
+    background: red;
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+}
+
+/* H principal */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("fondo.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(255, 0, 0, 0.25)
+    );
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    max-width: 900px;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+    background: red;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.hero h1 {
+    font-size: 80px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: red;
+}
+
+.hero p {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.btn-red,
+.btn-outline {
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.btn-red {
+    background: red;
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 18px;
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
