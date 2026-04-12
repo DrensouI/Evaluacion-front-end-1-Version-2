@@ -205,7 +205,7 @@ body {
 
 
 /* Cards */
-/* Contenedor que organiza cada tarjeta en un grid responsivo */
+/* Contenedor principal de las cards. Crea un grid responsive que ajusta la cantidad de tarjetas por fila según el ancho disponible. */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -213,7 +213,7 @@ body {
     margin-top: 30px;
 }
 
-/* Estilo base de cada tarjeta */
+/* Estilo base de cada tarjeta: fondo blanco, borde suave, sombra y padding interno. */
 .card {
     background: white;
     border: 1px solid gray;
@@ -226,12 +226,12 @@ body {
     padding: 30px;
 }
 
-/* Tarjeta destacada con borde rojo */
+/* Variante de tarjeta resaltada: bordes rojos para destacar servicios importantes. */
 .card-featured {
     border-color: red;
 }
 
-/* Cuadro del icono en la parte superior de cada tarjeta */
+/* Estilo del icono que aparece al inicio de cada tarjeta: cuadro redondeado con fondo claro y color de acento. */
 .card-icon {
     align-items: center;
     background: lightpink;
@@ -245,13 +245,13 @@ body {
     width: 44px;
 }
 
-/* Título de cada tarjeta */
+/* Título de la tarjeta: más pequeño y con margen inferior para separar del texto. */
 .card h3 {
     margin: 0 0 12px;
     font-size: 18px;
 }
 
-/* Descripción principal de la tarjeta */
+/* Texto descriptivo que explica el servicio. */
 .card p {
     color: dimgray;
     font-size: 14px;
@@ -259,7 +259,7 @@ body {
     margin: 0 0 16px;
 }
 
-/* Lista de características o puntos clave dentro de la tarjeta */
+/* Lista de beneficios o elementos del servicio se elimina el estilo de lista por defecto para aplicar puntos personalizados. */
 .card ul {
     flex-grow: 1;
     list-style: none;
@@ -267,7 +267,7 @@ body {
     padding: 0;
 }
 
-/* Cada elemento de la lista con espacio para el punto personalizado */
+/* Cada elemento de la lista tiene espacio izquierdo para el punto personalizado y margen inferior. */
 .card li {
     color: dimgray;
     font-size: 14px;
@@ -275,7 +275,7 @@ body {
     position: relative;
 }
 
-/* Punto rojo antes de cada elemento de lista */
+/* Punto rojo personalizado que aparece antes de cada elemento de lista. */
 .card li::before {
     background: red;
     border-radius: 50%;
@@ -287,14 +287,14 @@ body {
     width: 7px;
 }
 
-/* Estilo del enlace de acción dentro de la tarjeta */
+/* Enlace de llamada a la acción dentro de la tarjeta. Coloreado en rojo para destacarse. */
 .card a {
     color: red;
     font-weight: 700;
     text-decoration: none;
 }
 
-/* Efecto hover del enlace */
+/* Hover visible para el enlace, para indicar que es interactivo. */
 .card a:hover {
     opacity: .8;
 }
