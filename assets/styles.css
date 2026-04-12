@@ -152,12 +152,13 @@ body {
 /* H principal */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     background: url("foto1.jpg") center/cover no-repeat;  /*"fondo.jpg"*/
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 40px 20px 20px;
 }
 
 .overlay {
@@ -186,9 +187,9 @@ body {
 }
 
 .hero h1 {
-    font-size: 80px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    font-size: 56px;
+    line-height: 1.05;
+    margin-bottom: 18px;
 }
 
 .hero h1 span {
@@ -196,9 +197,106 @@ body {
 }
 
 .hero p {
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+}
+
+
+
+/* Cards */
+/* Contenedor que organiza cada tarjeta en un grid responsivo */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+/* Estilo base de cada tarjeta */
+.card {
+    background: white;
+    border: 1px solid gray;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px gray;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+    padding: 30px;
+}
+
+/* Tarjeta destacada con borde rojo */
+.card-featured {
+    border-color: red;
+}
+
+/* Cuadro del icono en la parte superior de cada tarjeta */
+.card-icon {
+    align-items: center;
+    background: lightpink;
+    border-radius: 18px;
+    color: red;
+    display: flex;
+    font-size: 20px;
+    height: 44px;
+    justify-content: center;
+    margin-bottom: 16px;
+    width: 44px;
+}
+
+/* Título de cada tarjeta */
+.card h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+}
+
+/* Descripción principal de la tarjeta */
+.card p {
+    color: dimgray;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+
+/* Lista de características o puntos clave dentro de la tarjeta */
+.card ul {
+    flex-grow: 1;
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+}
+
+/* Cada elemento de la lista con espacio para el punto personalizado */
+.card li {
+    color: dimgray;
+    font-size: 14px;
+    margin: 0 0 8px 18px;
+    position: relative;
+}
+
+/* Punto rojo antes de cada elemento de lista */
+.card li::before {
+    background: red;
+    border-radius: 50%;
+    content: "";
+    height: 7px;
+    left: 0;
+    position: absolute;
+    top: 7px;
+    width: 7px;
+}
+
+/* Estilo del enlace de acción dentro de la tarjeta */
+.card a {
+    color: red;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Efecto hover del enlace */
+.card a:hover {
+    opacity: .8;
 }
 
 .hero-buttons {
@@ -231,10 +329,4 @@ body {
     justify-content: center;
     gap: 40px;
     font-size: 18px;
-}* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
-
