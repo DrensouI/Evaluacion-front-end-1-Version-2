@@ -158,7 +158,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px 20px 20px;
+    padding: 20px 20px 20px;
 }
 
 .overlay {
@@ -226,10 +226,7 @@ body {
     padding: 30px;
 }
 
-/* Variante de tarjeta resaltada: bordes rojos para destacar servicios importantes. */
-.card-featured {
-    border-color: red;
-}
+
 
 /* Estilo del icono que aparece al inicio de cada tarjeta: cuadro redondeado con fondo claro y color de acento. */
 .card-icon {
@@ -331,7 +328,7 @@ body {
     font-size: 18px;
 }
 
-/* Contenedor con el fondo rojo */
+/* Contenedor con el fondo rojo */ /* SECCION DE SOFIA*/
 .container-por-que {
     background: #d90000;
     padding: 60px 20px;
@@ -381,4 +378,116 @@ body {
 
 .icon-por-que {
     font-size: 28px;
+}
+
+
+
+
+/* SECCION PROCESO DE ATENCIÓN A CLIENTES PARTICULARES*/
+.container-proceso-trabajo {
+    background: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    color: rgb(0, 0, 0)
+}
+
+.container-proceso-trabajo h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.container-proceso-trabajo p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: gray
+}
+
+
+/* Estilo base de cada tarjeta: fondo blanco, borde suave, sombra y padding interno. */
+.card-style-proceso-trabajo {
+    background: white;
+    border: 1px solid gray;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px gray;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    padding: 30px;
+}
+
+
+
+/* Contenedor principal de las cards. Crea un grid responsive que ajusta la cantidad de tarjetas por fila según el ancho disponible. */
+.card-container-proceso-trabajo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 10px;
+    margin-top: 30px;
+}
+
+
+/* Estilo del icono que aparece al inicio de cada tarjeta: cuadro redondeado con fondo claro y color de acento. */
+.card-icon {
+    align-items: center;
+    background: rgb(253, 188, 198);
+    border-radius: 18px;
+    color: red;
+    display: flex;
+    font-size: 20px;
+    height: 44px;
+    justify-content: center;
+    margin-bottom: 16px;
+    width: 44px;
+}
+
+/* Título de la tarjeta: más pequeño y con margen inferior para separar del texto. */
+.card-container-proceso-trabajo h3 {
+    margin: 0 0 12px;
+    font-size: 25px;
+}
+
+/* Texto descriptivo que explica el servicio. */
+.card-container-proceso-trabajo p {
+    color: dimgray;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+
+/* Lista de beneficios o elementos del servicio se elimina el estilo de lista por defecto para aplicar puntos personalizados. */
+.card-container-proceso-trabajo ul {
+    flex-grow: 1;
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+}
+
+/* Cada elemento de la lista tiene espacio izquierdo para el punto personalizado y margen inferior. */
+.card-container-proceso-trabajo li {
+    color: dimgray;
+    font-size: 14px;
+    margin: 0 0 8px 18px;
+    position: relative;
+}
+
+
+/* Contenedor con el fondo blanco */
+.segundo-container-proceso-trabajo {
+    background: #ffffff;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    padding: 60px 20px;
+    text-align: center;
+    color: rgb(0, 0, 0)
+}
+
+.segundo-container-proceso-trabajo h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.segundo-container-proceso-trabajo p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: gray
 }
