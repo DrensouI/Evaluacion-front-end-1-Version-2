@@ -491,3 +491,95 @@ body {
     margin-bottom: 40px;
     color: gray
 }
+
+
+/*Imagenes */
+.seccion-imagenes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    padding: 40px 20px;
+}
+
+/* Título principal de la sección */
+.seccion-imagenes h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de tarjetas que las alinea en fila y permite envolverlas en pantallas pequeñas */
+.tarjetas-imagenes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+}
+
+/* Tarjeta individual: mantiene la imagen recortada en esquinas redondeadas */
+.tarjeta-imagen {
+    position: relative;
+    flex: 1 1 48%; /* cada tarjeta intenta ocupar cerca de la mitad del ancho */
+    min-width: 320px;
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+/* Imagen de la tarjeta: llena el ancho y mantiene la proporción recortando si es necesario */
+.tarjeta-imagen img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+}
+
+/* Contenido de texto sobre la imagen, colocado en la parte inferior de la tarjeta */
+.tarjeta-imagen-contenido {
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+    right: 60px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Insignia de categoría con fondo rojo y bordes redondeados */
+.insignia-imagen {
+    background: #dc2626;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 300px;
+    font-size: 14px;
+}
+
+/* Título grande dentro de la tarjeta */
+.tarjeta-imagen-contenido h2 {
+    margin: 0;
+    font-size: 40px;
+    line-height: 1.05;
+}
+
+/* Descripción debajo del título */
+.tarjeta-imagen-descripcion {
+    margin: 0;
+    max-width: 720px;
+    font-size: 18px;
+}
+
+/* Fila de datos pequeños (ubicación, fecha) */
+.tarjeta-imagen-datos {
+    display: flex;
+    font-size: 16px;
+}
+
+/* Iconos y texto alineados dentro de la fila de datos */
+.dato-imagen {
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
