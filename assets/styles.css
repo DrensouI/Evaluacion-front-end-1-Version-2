@@ -402,6 +402,16 @@ body {
     color: gray
 }
 
+/* Sección para servicios de empresa: fondo rojo igual al top-bar */
+.proceso-empresas {
+    background: rgb(255, 0, 0);
+    color: white;
+}
+
+.proceso-empresas p {
+    color: #f7f7f7;
+}
+
 
 /* Estilo base de cada tarjeta: fondo blanco, borde suave, sombra y padding interno. */
 .card-style-proceso-trabajo {
@@ -494,6 +504,9 @@ body {
 
 
 /*Imagenes */
+
+
+
 .seccion-imagenes {
     display: flex;
     flex-direction: column;
