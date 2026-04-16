@@ -384,6 +384,7 @@ body {
 
 
 /* SECCION PROCESO DE ATENCIÓN A CLIENTES PARTICULARES*/
+
 .container-proceso-trabajo {
     background: #ffffff;
     padding: 60px 20px;
@@ -640,11 +641,6 @@ body {
     border-radius: 10px;
 }
 
-.urgente {
-    color: red;
-    font-weight: bold;
-}
-
 /* FORMULARIO */
 .formulario-contacto {
     background: #fff;
@@ -691,19 +687,63 @@ body {
     cursor: pointer;
 }
 
-/*Para la visualizacion de pantalla completa*/
-@media (max-width: 1024px) {
+@media (max-width: 600px) {
 
-    .grid-contacto {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .formulario-contacto {
-        padding: 20px;
+    .container-contacto {
+        padding: 40px 15px;
     }
 
     .container-contacto h2 {
-        font-size: 28px;
+        font-size: 24px;
+    }
+
+    .subtitulo-contacto {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    /* todo en una columna */
+    .grid-contacto {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Items contacto más compactos */
+    .item-contacto {
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .icono {
+        font-size: 20px;
+    }
+
+    /* FORM */
+    .formulario-contacto {
+        padding: 15px;
+    }
+
+    /* Inputs uno debajo del otro */
+    .fila {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto select,
+    .formulario-contacto textarea {
+        font-size: 14px;
+        padding: 9px;
+    }
+
+    .formulario-contacto button {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    /* Caja horario */
+    .horario {
+        padding: 12px;
+        font-size: 14px;
     }
 }
