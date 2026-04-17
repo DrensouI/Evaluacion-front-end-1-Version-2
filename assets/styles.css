@@ -398,7 +398,10 @@ body {
 }
 
 .container-proceso-trabajo p {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    max-height: 4.5em;
+    overflow: hidden;
     margin-bottom: 40px;
     color: gray
 }
@@ -414,27 +417,32 @@ body {
 }
 
 /* Estilo base de cada tarjeta: fondo blanco, borde suave, sombra y padding interno. */
-.card-style-proceso-trabajo {
+.card-style-proceso-trabajo {   
+    flex: 0 0 320px; 
+    height: 260px; 
     background: white;
-    border: 1px solid gray;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px gray;
-    color: black;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    min-height: 300px;
-    padding: 30px;
+    justify-content: flex-start;
+    scroll-snap-align: start;
+
 }
 
 
 
 /* Contenedor principal de las cards. Crea un grid responsive que ajusta la cantidad de tarjetas por fila según el ancho disponible. */
-.card-container-proceso-trabajo {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-top: 30px;
-    
+.card-container-proceso-trabajo {  
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 20px 0 30px;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
 }
 
 
@@ -448,22 +456,28 @@ body {
     font-size: 20px;
     height: 44px;
     justify-content: center;
-    margin-bottom: 16px;
     width: 44px;
+    margin-bottom: 12px;
 }
 
 /* Título de la tarjeta: más pequeño y con margen inferior para separar del texto. */
 .card-container-proceso-trabajo h3 {
-    margin: 0 0 12px;
-    font-size: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+    margin: 8px 0 10px;
+    text-align: center;
 }
 
 /* Texto descriptivo que explica el servicio. */
 .card-container-proceso-trabajo p {
     color: dimgray;
     font-size: 14px;
-    line-height: 1.6;
-    margin: 0 0 16px;
+    line-height: 1.5;
+    max-width: 680px;
+    margin: 0 auto 40px; 
+    max-height: 4.5em;
+    overflow: hidden;
 }
 
 /* Lista de beneficios o elementos del servicio se elimina el estilo de lista por defecto para aplicar puntos personalizados. */
@@ -505,8 +519,9 @@ body {
 
 /* ajuste de la pagina para la seccion de procesos a la hora de visualizar*/
 
-@media (min-width: auto) {
+@media (min-width: 768px) {
     .card-container-proceso-trabajo {
+        grid-auto-columns: 80%;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
@@ -516,6 +531,13 @@ body {
     .card-container-proceso-trabajo {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+/* carrusel de desplazamiento */ 
+.carousel-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 
