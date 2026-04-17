@@ -431,7 +431,7 @@ body {
 /* Contenedor principal de las cards. Crea un grid responsive que ajusta la cantidad de tarjetas por fila según el ancho disponible. */
 .card-container-proceso-trabajo {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: 1fr;
     gap: 10px;
     margin-top: 30px;
     
@@ -503,10 +503,23 @@ body {
     color: gray
 }
 
+/* ajuste de la pagina para la seccion de procesos a la hora de visualizar*/
+
+@media (min-width: auto) {
+    .card-container-proceso-trabajo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-container-proceso-trabajo {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 
 /*Imagenes */
-
-
 
 .seccion-imagenes {
     display: flex;
