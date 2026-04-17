@@ -389,7 +389,7 @@ body {
     background: #ffffff;
     padding: 60px 20px;
     text-align: center;
-    color: rgb(0, 0, 0)
+    color: rgb(0, 0, 0);
 }
 
 .container-proceso-trabajo h2 {
@@ -403,7 +403,7 @@ body {
     max-height: 4.5em;
     overflow: hidden;
     margin-bottom: 40px;
-    color: gray
+    color: gray;
 }
 
 /* Sección para servicios de empresa: fondo rojo igual al top-bar */
@@ -425,10 +425,9 @@ body {
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     padding: 24px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    scroll-snap-align: start;
-
+    flex-direction: column; /*apila todo en columnas, osea hacia abajito */
+    width: 100%;
+    max-width: 280%;
 }
 
 
@@ -439,7 +438,6 @@ body {
     gap: 24px;
     overflow-x: auto;
     padding: 20px 0 30px;
-
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 
@@ -460,7 +458,7 @@ body {
     margin-bottom: 12px;
 }
 
-/* Título de la tarjeta: más pequeño y con margen inferior para separar del texto. */
+/* Título de la tarjeta: más pequeño, centrado y con margen inferior para separar del texto. */
 .card-container-proceso-trabajo h3 {
     font-size: 18px;
     font-weight: 600;
@@ -469,7 +467,7 @@ body {
     text-align: center;
 }
 
-/* Texto descriptivo que explica el servicio. */
+/* Texto descriptivo que explica el servicio. */ 
 .card-container-proceso-trabajo p {
     color: dimgray;
     font-size: 14px;
@@ -503,7 +501,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     padding: 60px 20px;
     text-align: center;
-    color: rgb(0, 0, 0)
+    color: rgb(0, 0, 0);
 }
 
 .segundo-container-proceso-trabajo h2 {
@@ -514,12 +512,12 @@ body {
 .segundo-container-proceso-trabajo p {
     font-size: 16px;
     margin-bottom: 40px;
-    color: gray
+    color: gray;
 }
 
 /* ajuste de la pagina para la seccion de procesos a la hora de visualizar*/
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { /* esto adapta la visibilidad cuando la capacidad del dispositivo esta desde los 768 px*/
     .card-container-proceso-trabajo {
         grid-auto-columns: 80%;
         grid-template-columns: repeat(2, 1fr);
@@ -527,7 +525,7 @@ body {
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) { /*hace exactamente lo mismo solo que desde los 1024px (pantallas grandes)*/
     .card-container-proceso-trabajo {
         grid-template-columns: repeat(3, 1fr);
     }
