@@ -8,7 +8,7 @@
 
 
 
-
+/* contacto, correo, horario */
 .top-bar{
     background: rgb(255, 0, 0);
     display: flex; /*Basicamente que sea flexible donde se pueda alinear en fila y facil de ordenar*/
@@ -28,6 +28,9 @@
 }
 
 
+
+
+/* Logo de la empresa */
 .logo{
     display: flex;
     align-items: center;
@@ -49,8 +52,10 @@
 
 }
 
-/* Navbar */
-.navbar {
+
+
+/*     BARRA DE NAVEGACIÓN      */
+.barra-navegacion {
     background: white;
     display: flex;
     justify-content: space-between;
@@ -60,7 +65,7 @@
 
 
 @media (max-width: 600px){
-    .navbar{
+    .barra-navegacion{
         flex-direction: column;
         align-items: center;
     }
@@ -68,14 +73,14 @@
 
 
 
-.nav-links {
+.barra-navegacion-links {
     display: flex;
     gap: 30px;
     list-style: none;
 }
 
 @media (max-width: 600px){
-    .nav-links{
+    .barra-navegacion-links{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -83,7 +88,7 @@
     }
 }
 
-.nav-links a {
+.barra-navegacion-links a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
@@ -91,28 +96,10 @@
 
 
 
-.btn-nav {
-    background: red;
-    color: white;
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 30px;
-}
 
 
-.badge {
-    display: inline-block;
-    background: red;
-    padding: 10px 20px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    font-size: 18px;
-}
-
-
-
-/* H principal */
-.hero {
+/*      PORTADA      */
+.portada {
     position: relative;
     min-height: 100vh;
     background: url("foto1.jpg") center/cover no-repeat;  /*"fondo.jpg"*/
@@ -123,6 +110,8 @@
     padding: 20px 20px 20px;
 }
 
+
+/*      FILTRO ENCIMA DE LA PORTADA      */
 .overlay {
     position: absolute;
     width: 100%;
@@ -132,7 +121,7 @@
     );
 }
 
-.hero-content {
+.portada-content {
     position: relative;
     color: white;
     max-width: 900px;
@@ -140,23 +129,23 @@
 }
 
 
-.hero h1 {
+.portada h1 {
     font-size: 56px;
     line-height: 1.05;
     margin-bottom: 18px;
 }
 
-.hero h1 span {
+.portada h1 span {
     color: red;
 }
 
-.hero p {
+.portada p {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 24px;
 }
 
-.hero .titulo-nuestros-servicios {
+.portada .titulo-nuestros-servicios {
     margin-top: 90px;
 }
 
@@ -254,30 +243,8 @@
     opacity: .8;
 }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 50px;
-}
 
-.btn-red,
-.btn-outline {
-    text-decoration: none;
-    padding: 16px 32px;
-    border-radius: 10px;
-    font-size: 18px;
-}
 
-.btn-red {
-    background: red;
-    color: white;
-}
-
-.btn-outline {
-    border: 2px solid white;
-    color: white;
-}
 
 .features {
     display: flex;
@@ -364,7 +331,7 @@
     color: gray;
 }
 
-/* Sección para servicios de empresa: fondo rojo igual al top-bar */
+/* Sección para servicios de empresa*/
 .proceso-empresas {
     background: rgb(255, 0, 0);
     color: white;
@@ -438,26 +405,6 @@
     position: relative;
 }
 
-
-/* Contenedor con el fondo blanco */
-.segundo-container-proceso-trabajo {
-    background: #ffffff;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    padding: 60px 20px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-}
-
-.segundo-container-proceso-trabajo h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.segundo-container-proceso-trabajo p {
-    font-size: 16px;
-    margin-bottom: 40px;
-    color: gray;
-}
 
 /* ajuste de la pagina para la seccion de procesos a la hora de visualizar*/
 
@@ -805,10 +752,10 @@ html   {
 #proceso-atencion,
 #proyectos,
 #formulario-contacto {
-    scroll-margin-top: 40px; /* Ajusta según altura de top-bar + navbar */
+    scroll-margin-top: 40px; /* Ajusta según altura de top-bar + barra-navegacion */
 }
 
-/* Inicio: el título “Nuestros Servicios” queda arriba del área visible (sin el hero) */
+/* Inicio: el título “Nuestros Servicios” queda arriba del área visible (sin la portada) */
 #nuestros-servicios {
     scroll-margin-top: 0;
 }
