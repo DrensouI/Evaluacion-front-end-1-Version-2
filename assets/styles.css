@@ -781,3 +781,46 @@ body {
         font-size: 14px;
     }
 }
+
+/* Footer */
+/* Reset básico */
+body { margin: 0; padding: 0; }
+
+/* Estructura Base del Footer */
+footer {
+    background: #f00000;
+    color: #fff;
+    width: 100%;
+    padding: 30px 0;
+}
+
+/* Contenedor de Columnas */
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo para cada columna */
+.footer-col {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col li { margin-bottom: 8px; font-size: 14px; }
+
+/* Barra de Copyright */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 20px;
+    padding-top: 15px;
+}
