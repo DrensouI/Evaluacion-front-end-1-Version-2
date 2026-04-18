@@ -824,3 +824,23 @@ footer {
     margin-top: 20px;
     padding-top: 15px;
 }
+
+.footer-link{
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s;
+    
+}
+
+.footer-link.hover {
+    color: #f00000;
+    text-decoration: underline;
+}
+
+html   {
+    scroll-behavior: smooth;
+}
+
+#proyectos {
+    scroll-margin-top: 80px; /* Ajusta este valor según la altura de tu navbar */
+}
