@@ -202,7 +202,9 @@ body {
     margin-bottom: 24px;
 }
 
-
+.hero .titulo-nuestros-servicios {
+    margin-top: 90px;
+}
 
 /* Cards */
 /* Contenedor principal de las cards. Crea un grid responsive que ajusta la cantidad de tarjetas por fila según el ancho disponible. */
@@ -284,15 +286,17 @@ body {
     width: 7px;
 }
 
-/* Enlace de llamada a la acción dentro de la tarjeta. Coloreado en rojo para destacarse. */
-.card a {
+/* CTA dentro de la tarjeta (texto rojo; span evita salto al inicio por href="#"). */
+.card a,
+.card .card-mas-info {
     color: red;
     font-weight: 700;
     text-decoration: none;
+    cursor: pointer;
 }
 
-/* Hover visible para el enlace, para indicar que es interactivo. */
-.card a:hover {
+.card a:hover,
+.card .card-mas-info:hover {
     opacity: .8;
 }
 
@@ -841,6 +845,14 @@ html   {
     scroll-behavior: smooth;
 }
 
-#proyectos {
-    scroll-margin-top: 80px; /* Ajusta este valor según la altura de tu navbar */
+#nosotros,
+#proceso-atencion,
+#proyectos,
+#formulario-contacto {
+    scroll-margin-top: 40px; /* Ajusta según altura de top-bar + navbar */
+}
+
+/* Inicio: el título “Nuestros Servicios” queda arriba del área visible (sin el hero) */
+#nuestros-servicios {
+    scroll-margin-top: 0;
 }

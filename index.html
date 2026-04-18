@@ -24,11 +24,11 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#nuestros-servicios">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#proceso-atencion">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#formulario-contacto">Contacto</a></li>
         </ul>
 
     </nav>
@@ -56,7 +56,7 @@
                 <span>✔ Seguridad Garantizada</span>
             </div>
 
-              <h2 style="margin-top: 90px;">Nuestros Servicios</h2>
+            <h2 id="nuestros-servicios" class="titulo-nuestros-servicios">Nuestros Servicios</h2>
             <p>Soluciones integrales para tus necesidades de montajes industriales, obras civiles y mantenimiento industrial.</p>
 
             <div class="card-container">
@@ -69,7 +69,7 @@
                         <li>Techos metálicos</li>
                         <li>Puentes peatonales</li>
                     </ul>
-                    <a href="#">Más información →</a>
+                    <span class="card-mas-info">Más información →</span>
                 </div>
 
                 <div class="card">
@@ -81,7 +81,7 @@
                         <li>Líneas de ensamble</li>
                         <li>Equipos pesados</li>
                     </ul>
-                    <a href="#">Más información →</a>
+                    <span class="card-mas-info">Más información →</span>
                 </div>
 
                 <div class="card">
@@ -93,11 +93,12 @@
                         <li>Urbanización</li>
                         <li>Pavimentación</li>
                     </ul>
-                    <a href="#">Más información →</a>
+                    <span class="card-mas-info">Más información →</span>
                 </div>
+            </div>
         </div>
     </section>
-    <section class="container-por-que">
+    <section id="nosotros" class="container-por-que">
     <div class="content-wrapper">
         <h2 class="title">¿Por Qué Elegirnos?</h2>
         <p class="subtitle">Somos tu mejor aliado para proyectos de montajes civiles e industriales</p>
@@ -121,6 +122,7 @@
         </div>
     </div>
     </section>
+    <div id="proceso-atencion">
     <section class="container-proceso-trabajo ">
         <h2 class="title">Proceso de Atención a Clientes Particulares</h2>
         <p class="subtitle">Un proceso claro y eficiente para brindar soluciones personalizadas desde la solicitud hasta la formalización del servicio.</p>
@@ -194,6 +196,7 @@
                 </div>
             </div>
     </section>
+    </div>
 
     <section id="proyectos" class="seccion-imagenes">
         <h1>Proyectos destacados</h1>
@@ -275,7 +278,7 @@
         </div>
 
         <!-- DERECHA -->
-        <form class="formulario-contacto">
+        <form id="formulario-contacto" class="formulario-contacto">
             <label>Nombre Completo *</label>
             <input type="text" placeholder="Juan Pérez">
 
@@ -290,9 +293,22 @@
                 </div>
             </div>
 
+            <label>Tipo de cliente *</label>
+            <select>
+                <option>Selecciona un tipo de cliente</option>
+                <option>Particular</option>
+                <option>Empresa</option>
+            </select>
+
+
             <label>Tipo de Servicio *</label>
             <select>
                 <option>Selecciona un servicio</option>
+                <option>Montaje industriales</option>
+                <option>Mantenimiento industrial</option>
+                <option>Obras civiles</option>
+               
+
             </select>
 
             <label>Mensaje *</label>
@@ -319,11 +335,11 @@
         </div>
 
         <div class="footer-col">
-            <h4>Empresa</h4>
+            <h4>Sobre Nosotros</h4>
             <ul>
                 
                 <li> <a href="https://drive.google.com/file/d/1IdZ2wsLYDB57bVHJ-eNpKDG9o4Y4xgmX/view?usp=sharing" 
-                class="footer-link" target="_blank">Sobre Nosotros</a></li>
+                class="footer-link" target="_blank">Dossier de la empresa</a></li>
                 <li> <a href="https://drive.google.com/file/d/1WBTDzyQ_s_OfMoyiaA1QdM2CZtAMR012/view?usp=sharing"  
                 class="footer-link" target="_blank">Programa de integridad y etica</a></li>
                 <li> <a href="#proyectos" class="footer-link">Proyectos</a></li>
