@@ -1,767 +1,649 @@
-/* el asterisco selecciona todos los elementos en si que tiene el codigo*/
+/* ==========================================================================
+   ESTILOS BASE
+   ========================================================================== */
 * { 
-    margin: 0; /*Elimina todos los margenes que se crean por defecto*/
-    padding: 0; /*Quita los espacios internos por defecto*/
-    box-sizing: border-box; /*Evita que los elementos "crezcan de mas" por asi decirlo*/ 
-    font-family: Arial, sans-serif; /*La fuente base del texto*/
+    margin: 0; /* Elimina el margen externo predeterminado de todos los elementos */
+    padding: 0; /* Elimina el relleno interno predeterminado de todos los elementos */
+    box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el ancho total del elemento */
+    font-family: Arial, sans-serif; /* Establece la fuente principal y una de respaldo */
 }
 
-
-
-
-/* contacto, correo, horario */
-.barra-superior{
-    background: rgb(255, 0, 0);
-    display: flex; /*Basicamente que sea flexible donde se pueda alinear en fila y facil de ordenar*/
-    justify-content: space-between; /*Que los elementos tengan una separación considerable*/
-    align-items: center; /*Centrarlos verticalmente*/
-    padding: 10px 40px; /*Basicamente se adapta al contenido*/
-}
-.barra-superior p{ /* Basicamente afecta al tipo de texto que quieres en si (solo los que usen la clase top-bar)*/
-    color: white;
-    text-decoration: none;    
+html {
+    scroll-behavior: smooth; /* Hace que el desplazamiento al hacer clic en enlaces internos sea suave */
 }
 
-@media (max-width: 600px){
-    .barra-superior{
-        flex-direction: column;
-    }
+/* ==========================================================================
+   BARRA SUPERIOR Y NAVEGACIÓN
+   ========================================================================== */
+.barra-superior {
+    background: rgb(255, 0, 0); /* Define el color de fondo rojo */
+    display: flex; /* Activa el modelo de caja flexible para alinear elementos */
+    justify-content: space-between; /* Distribuye el contenido dejando el máximo espacio entre los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 10px 40px; /* Agrega 10px de espacio arriba/abajo y 40px a los lados */
 }
 
-
-
-
-/* Logo de la empresa */
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.barra-superior p {
+    color: white; /* Cambia el color del texto a blanco */
+    text-decoration: none; /* Quita subrayados u otros adornos de texto */
 }
 
-.logo img{
-    height: 60px;
-    width: auto;
-    display: block;
-
-}
-
-@media (max-width: 600px){
-    .logo img{
-        margin-top: -10px;
-    }
-
-
-}
-
-
-
-/*     BARRA DE NAVEGACIÓN      */
 .barra-navegacion {
-    background: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+    background: white; /* Establece el fondo blanco para el menú */
+    display: flex; /* Alinea el logo y los enlaces en una fila */
+    justify-content: space-between; /* Empuja el logo a la izquierda y el menú a la derecha */
+    align-items: center; /* Centra verticalmente el logo y los links */
+    padding: 20px 40px; /* Espaciado interno para dar aire al menú */
 }
 
-
-@media (max-width: 600px){
-    .barra-navegacion{
-        flex-direction: column;
-        align-items: center;
-    }
+.logo {
+    display: flex; /* Permite alinear el contenido dentro del contenedor del logo */
+    align-items: center; /* Centra el logo verticalmente */
+    gap: 15px; /* Crea una separación de 15px entre elementos internos del logo */
 }
 
-
-
+.logo img {
+    height: 60px; /* Define una altura fija para el logo */
+    width: auto; /* Mantiene la proporción original de la imagen */
+    display: block; /* Elimina espacios extra que las imágenes suelen tener debajo */
+}
 
 .barra-navegacion-links {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-@media (max-width: 600px){
-    .barra-navegacion-links{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 13px;
-    }
+    display: flex; /* Coloca los ítems de la lista en una fila horizontal */
+    gap: 30px; /* Espacio de 30px entre cada botón del menú */
+    list-style: none; /* Elimina los puntos o viñetas de la lista */
 }
 
 .barra-navegacion-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
+    text-decoration: none; /* Quita el subrayado azul por defecto de los enlaces */
+    color: #333; /* Define un color gris oscuro para el texto */
+    font-weight: 500; /* Aplica un grosor de letra medio */
 }
 
-
-
-
-
-/*      PORTADA      */
+/* ==========================================================================
+   PORTADA (HERO)
+   ========================================================================== */
 .portada {
-    position: relative;
-    min-height: 100vh;
-    background: url("foto1.jpg") center/cover no-repeat;  /*"fondo.jpg"*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px 20px 20px;
+    position: relative; /* Permite posicionar elementos hijos (como el filtro) respecto a este contenedor */
+    min-height: 100vh; /* Define que la altura mínima sea el 100% de la ventana del navegador */
+    background: url("foto1.jpg") center/cover no-repeat; /* Imagen de fondo centrada, que cubre todo y no se repite */
+    display: flex; /* Activa flexbox para centrar el contenido del texto */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Centra el alineado de las líneas de texto */
+    padding: 20px 20px 20px; /* Espaciado interno de seguridad */
 }
 
-
-/*      FILTRO ENCIMA DE LA PORTADA      */
 .filtro {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.6)
-    );
+    position: absolute; /* Se coloca encima de la imagen de fondo cubriendo todo el espacio */
+    width: 100%; /* Ocupa el 100% del ancho del padre */
+    height: 100%; /* Ocupa el 100% del alto del padre */
+    background: linear-gradient(rgba(0, 0, 0, 0.6)); /* Capa oscura semitransparente para mejorar la lectura del texto */
 }
-
-
-.caracteristicas {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    font-size: 18px;
-}
-
-
-
-
 
 .portada-content {
-    position: relative;
-    color: white;
-    max-width: 900px;
-    z-index: 2;
+    position: relative; /* Asegura que el texto aparezca por encima de la capa negra */
+    color: white; /* Color de texto blanco */
+    max-width: 900px; /* Evita que el texto se extienda demasiado a lo ancho */
+    z-index: 2; /* Indica que este elemento tiene prioridad de visualización sobre el filtro */
 }
 
-
 .portada h1 {
-    font-size: 56px;
-    line-height: 1.05;
-    margin-bottom: 18px;
+    font-size: 56px; /* Tamaño de fuente grande para el título principal */
+    line-height: 1.05; /* Espaciado entre líneas muy reducido para impacto visual */
+    margin-bottom: 18px; /* Espacio entre el título y el párrafo */
 }
 
 .portada h1 span {
-    color: red;
+    color: red; /* Resalta el texto dentro del span con color rojo */
 }
 
 .portada p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    font-size: 18px; /* Tamaño de fuente del texto descriptivo */
+    line-height: 1.6; /* Interlineado amplio para facilitar la lectura */
+    margin-bottom: 24px; /* Espacio antes del siguiente bloque */
+}
+
+.caracteristicas {
+    display: flex; /* Alinea los iconos de beneficios en fila */
+    justify-content: center; /* Los centra horizontalmente */
+    gap: 40px; /* Separación entre cada característica */
+    font-size: 18px; /* Tamaño de letra para los beneficios */
 }
 
 .portada .titulo-nuestros-servicios {
-    margin-top: 90px;
+    margin-top: 90px; /* Empuja el título de servicios hacia abajo dentro del Hero */
 }
 
-/* Cards */
-/* Contenedor principal de las cards. Crea un grid responsive que ajusta la cantidad de tarjetas por fila según el ancho disponible. */
+/* ==========================================================================
+   TARJETAS DE SERVICIOS
+   ========================================================================== */
 .contenedor-tarjetas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    margin-top: 30px;
+    display: grid; /* Activa el sistema de rejilla (Grid Layout) */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Crea columnas que se ajustan solas según el tamaño de pantalla */
+    gap: 24px; /* Espacio de separación entre las tarjetas */
+    margin-top: 30px; /* Margen superior respecto al título */
 }
 
-/* Estilo base de cada tarjeta: fondo blanco, borde suave, sombra y padding interno. */
 .card {
-    background: white;
-    border: 1px solid gray;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px gray;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    min-height: 380px;
-    padding: 30px;
+    background: white; /* Fondo blanco para la tarjeta */
+    border: 1px solid gray; /* Borde gris fino de 1px */
+    border-radius: 24px; /* Redondea las esquinas de la tarjeta */
+    box-shadow: 0 20px 40px gray; /* Crea una sombra para dar efecto de profundidad */
+    color: black; /* Color de texto negro */
+    display: flex; /* Permite organizar el contenido interno verticalmente */
+    flex-direction: column; /* Apila el contenido (icono, h3, p) en columna */
+    min-height: 380px; /* Garantiza que todas tengan al menos la misma altura mínima */
+    padding: 30px; /* Espacio interno dentro de la tarjeta */
 }
 
-
-
-/* Estilo del icono que aparece al inicio de cada tarjeta: cuadro redondeado con fondo claro y color de acento. */
 .card-icon {
-    align-items: center;
-    background: lightpink;
-    border-radius: 18px;
-    color: red;
-    display: flex;
-    font-size: 20px;
-    height: 44px;
-    justify-content: center;
-    width: 44px;
-    margin-bottom: 12px;
+    align-items: center; /* Centra el icono verticalmente dentro de su cuadro */
+    background: lightpink; /* Fondo rosa claro para el icono */
+    border-radius: 18px; /* Esquinas redondeadas del cuadro del icono */
+    color: red; /* Color del icono */
+    display: flex; /* Necesario para el centrado interno */
+    font-size: 20px; /* Tamaño del icono */
+    height: 44px; /* Altura fija del cuadro del icono */
+    justify-content: center; /* Centra el icono horizontalmente */
+    width: 44px; /* Ancho fijo del cuadro del icono */
+    margin-bottom: 12px; /* Espacio antes del título */
 }
 
-/* Título de la tarjeta: más pequeño y con margen inferior para separar del texto. */
 .card h3 {
-    margin: 0 0 12px;
-    font-size: 18px;
+    margin: 0 0 12px; /* Margen de 12px solo en la parte inferior */
+    font-size: 18px; /* Tamaño de fuente del título de la tarjeta */
 }
 
-/* Texto descriptivo que explica el servicio. */
 .card p {
-    color: dimgray;
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0 0 16px;
+    color: dimgray; /* Color gris suave para el texto descriptivo */
+    font-size: 14px; /* Tamaño de fuente pequeño */
+    line-height: 1.6; /* Interlineado del párrafo */
+    margin: 0 0 16px; /* Espacio inferior */
 }
 
-/* Lista de beneficios o elementos del servicio se elimina el estilo de lista por defecto para aplicar puntos personalizados. */
 .card ul {
-    flex-grow: 1;
-    list-style: none;
-    margin: 0 0 18px;
-    padding: 0;
+    flex-grow: 1; /* Hace que la lista ocupe el espacio disponible para empujar el botón al final */
+    list-style: none; /* Quita los puntos por defecto de la lista */
+    margin: 0 0 18px; /* Espacio inferior */
+    padding: 0; /* Quita el relleno lateral */
 }
 
-/* Cada elemento de la lista tiene espacio izquierdo para el punto personalizado y margen inferior. */
 .card li {
-    color: dimgray;
-    font-size: 14px;
-    margin: 0 0 8px 18px;
-    position: relative;
+    color: dimgray; /* Color de texto gris */
+    font-size: 14px; /* Tamaño de fuente */
+    margin: 0 0 8px 18px; /* Margen para dar espacio al punto rojo personalizado */
+    position: relative; /* Base para posicionar el punto ::before */
 }
 
-/* Punto rojo personalizado que aparece antes de cada elemento de lista. */
 .card li::before {
-    background: red;
-    border-radius: 50%;
-    content: "";
-    height: 7px;
-    left: 0;
-    position: absolute;
-    top: 7px;
-    width: 7px;
+    background: red; /* Color rojo para el punto de la lista */
+    border-radius: 50%; /* Lo convierte en un círculo perfecto */
+    content: ""; /* Obligatorio para que se genere el elemento */
+    height: 7px; /* Altura del punto */
+    left: 0; /* Lo posiciona a la izquierda del texto */
+    position: absolute; /* Lo saca del flujo para colocarlo manualmente */
+    top: 7px; /* Lo alinea con la primera línea de texto */
+    width: 7px; /* Ancho del punto */
 }
 
-/* CTA dentro de la tarjeta (texto rojo; span evita salto al inicio por href="#"). */
 .card a,
 .card .card-mas-info {
-    color: red;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
+    color: red; /* Texto en color rojo */
+    font-weight: 700; /* Letra en negrita */
+    text-decoration: none; /* Quita el subrayado */
+    cursor: pointer; /* Cambia el cursor a "mano" para indicar que es clicable */
 }
 
 .card a:hover,
 .card .card-mas-info:hover {
-    opacity: .8;
+    opacity: .8; /* Reduce la opacidad al pasar el ratón para dar respuesta visual */
 }
 
-
-
-/* Contenedor con el fondo rojo */ /* SECCION DE SOFIA*/
+/* ==========================================================================
+   ¿POR QUÉ ELEGIRNOS?
+   ========================================================================== */
 .container-por-que {
-    background: #d90000;
-    padding: 60px 20px;
-    text-align: center;
-    color: white;
+    background: #d90000; /* Color rojo de fondo para la sección */
+    padding: 60px 20px; /* Relleno vertical de 60px y horizontal de 20px */
+    text-align: center; /* Centra todo el contenido de texto */
+    color: white; /* Color de fuente blanco para contraste */
 }
 
 .container-por-que h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 32px; /* Tamaño de fuente del título */
+    margin-bottom: 10px; /* Espacio inferior */
 }
 
 .container-por-que > p {
-    font-size: 16px;
-    margin-bottom: 40px;
+    font-size: 16px; /* Tamaño del párrafo bajo el título */
+    margin-bottom: 40px; /* Espacio antes de las tarjetas */
 }
 
 .cards-por-que {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-top: 50px;
+    display: flex; /* Alinea las tarjetas de beneficios en fila */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 25px; /* Separación entre tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas bajen a la siguiente fila en pantallas pequeñas */
+    margin-top: 50px; /* Margen superior */
 }
 
 .card-por-que {
-    background: rgba(185, 74, 74, 0.144);
-    border: 1px solid rgb(150, 52, 52);
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgb(136, 65, 65);
-    color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    min-height: 38px;
-    padding: 38px;
+    background: rgba(185, 74, 74, 0.144); /* Fondo rojo muy transparente (estilo cristal) */
+    border: 1px solid rgb(150, 52, 52); /* Borde sutil para definir la tarjeta */
+    border-radius: 24px; /* Esquinas redondeadas */
+    box-shadow: 0 20px 40px rgb(136, 65, 65); /* Sombra con matiz rojizo */
+    color: rgb(255, 255, 255); /* Texto blanco */
+    display: flex; /* Activa flexbox interno */
+    flex-direction: column; /* Organiza el icono, h3 y p en vertical */
+    min-height: 38px; /* Establece una altura mínima base */
+    padding: 38px; /* Relleno interno generoso */
 }
 
 .card-por-que h3 {
-    margin: 15px 0 10px;
-    font-size: 20px;
+    margin: 15px 0 10px; /* Márgenes: 15px arriba, 0 lados, 10px abajo */
+    font-size: 20px; /* Tamaño del título de beneficio */
 }
 
 .card-por-que p {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 14px; /* Tamaño del texto descriptivo */
+    line-height: 1.5; /* Interlineado */
 }
 
 .icon-por-que {
-    font-size: 28px;
+    font-size: 28px; /* Tamaño grande para el icono (emoji) */
 }
 
-
-
-
-/* SECCION PROCESO DE ATENCIÓN A CLIENTES PARTICULARES*/
-
+/* ==========================================================================
+   PROCESO DE ATENCIÓN
+   ========================================================================== */
 .container-proceso-trabajo {
-    background: #ffffff;
-    padding: 60px 20px;
-    text-align: center;
-    color: rgb(0, 0, 0);
+    background: #ffffff; /* Fondo blanco */
+    padding: 60px 20px; /* Relleno de la sección */
+    text-align: center; /* Centra el contenido */
+    color: rgb(0, 0, 0); /* Texto negro */
 }
 
 .container-proceso-trabajo h2 {
-    font-size: 32px;
-    margin-bottom: 8px;
+    font-size: 32px; /* Tamaño del título */
+    margin-bottom: 8px; /* Margen inferior */
 }
 
 .container-proceso-trabajo p {
-    font-size: 14px;
-    line-height: 1.5;
-    max-height: 4.5em;
-    overflow: hidden;
-    margin-bottom: 40px;
-    color: gray;
+    font-size: 14px; /* Tamaño letra párrafo */
+    line-height: 1.5; /* Altura de línea */
+    color: gray; /* Color de texto gris */
 }
 
-/* Sección para servicios de empresa*/
 .proceso-empresas {
-    background: rgb(255, 0, 0);
-    color: white;
+    background: rgb(255, 0, 0); /* Versión de la sección en fondo rojo */
+    color: white; /* Cambia el texto a blanco para esta sección */
 }
 
 .proceso-empresas p {
-    color: #f7f7f7;
+    color: #f7f7f7; /* Gris casi blanco para el texto secundario */
 }
 
-/* Estilo base de cada tarjeta: fondo blanco, borde suave, sombra y padding interno. */
-.card-style-proceso-trabajo {   
-    flex: 0 0 320px; 
-    height: 260px; 
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    padding: 24px;
-    display: flex;
-    flex-direction: column; /*apila todo en columnas, osea hacia abajito */
-    width: 100%;
-    max-width: 280%;
-}
-
-
-
-/* Contenedor principal de las cards. Crea un grid responsive que ajusta la cantidad de tarjetas por fila según el ancho disponible. */
 .card-container-proceso-trabajo {  
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    padding: 20px 0 30px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-
+    display: flex; /* Coloca las etapas del proceso en fila */
+    gap: 24px; /* Espacio entre cada paso */
+    overflow-x: auto; /* Permite deslizar horizontalmente si el contenido se sale */
+    padding: 20px 0 30px; /* Espacio para que las sombras no se corten */
+    scroll-snap-type: x mandatory; /* El scroll se detiene automáticamente en cada tarjeta */
+    -webkit-overflow-scrolling: touch; /* Mejora la suavidad del scroll en dispositivos iOS */
 }
 
+.card-style-proceso-trabajo {   
+    flex: 0 0 320px; /* No crece ni se encoge, se mantiene fijo en 320px */
+    height: 260px; /* Altura fija para uniformidad */
+    background: white; /* Fondo blanco */
+    border-radius: 16px; /* Redondeo de esquinas */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15); /* Sombra suave */
+    padding: 24px; /* Relleno interno */
+    display: flex; /* Flex interno */
+    flex-direction: column; /* Contenido en columna */
+    width: 100%; /* Ocupa el ancho disponible */
+}
 
-/* Título de la tarjeta: más pequeño, centrado y con margen inferior para separar del texto. */
 .card-container-proceso-trabajo h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #111;
-    margin: 8px 0 10px;
-    text-align: center;
+    font-size: 18px; /* Tamaño título del paso */
+    font-weight: 600; /* Letra seminegrita */
+    color: #111; /* Color casi negro */
+    margin: 8px 0 10px; /* Márgenes */
+    text-align: center; /* Centra el texto */
 }
 
-/* Texto descriptivo que explica el servicio. */ 
 .card-container-proceso-trabajo p {
-    color: dimgray;
-    font-size: 14px;
-    line-height: 1.5;
-    max-width: 680px;
-    margin: 0 auto 40px; 
-    max-height: 4.5em;
-    overflow: hidden;
+    color: dimgray; /* Texto gris */
+    font-size: 14px; /* Tamaño fuente */
+    line-height: 1.5; /* Interlineado */
+    max-width: 680px; /* Limita el ancho del texto */
+    margin: 0 auto 40px; /* Centra el bloque horizontalmente */
+    max-height: 4.5em; /* Limita la altura del texto a unas 3 líneas */
+    overflow: hidden; /* Oculta el texto que sobrepase la altura máxima */
 }
 
-/* Lista de beneficios o elementos del servicio se elimina el estilo de lista por defecto para aplicar puntos personalizados. */
-.card-container-proceso-trabajo ul {
-    flex-grow: 1;
-    list-style: none;
-    margin: 0 0 18px;
-    padding: 0;
-}
-
-/* Cada elemento de la lista tiene espacio izquierdo para el punto personalizado y margen inferior. */
-.card-container-proceso-trabajo li {
-    color: dimgray;
-    font-size: 14px;
-    margin: 0 0 8px 18px;
-    position: relative;
-}
-
-
-/* ajuste de la pagina para la seccion de procesos a la hora de visualizar*/
-
-@media (min-width: 768px) { /* esto adapta la visibilidad cuando la capacidad del dispositivo esta desde los 768 px*/
-    .card-container-proceso-trabajo {
-        grid-auto-columns: 80%;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-@media (min-width: 1024px) { /*hace exactamente lo mismo solo que desde los 1024px (pantallas grandes)*/
-    .card-container-proceso-trabajo {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* carrusel de desplazamiento */ 
 .carousel-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px;
+  max-width: 1100px; /* Ancho máximo para el contenedor del carrusel */
+  margin: 0 auto; /* Centra el carrusel en la página */
+  padding: 0 16px; /* Espacio a los lados */
 }
 
-
-/*Imagenes */
-
+/* ==========================================================================
+   PROYECTOS DESTACADOS
+   ========================================================================== */
 .seccion-imagenes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    background: #fff;
-    padding: 40px 20px;
+    display: flex; /* Organiza la galería verticalmente */
+    flex-direction: column; /* Título arriba, imágenes abajo */
+    align-items: center; /* Centra los títulos */
+    gap: 20px; /* Separación entre elementos */
+    background: #fff; /* Fondo blanco */
+    padding: 40px 20px; /* Relleno de la sección */
 }
 
-/* Título principal de la sección */
 .seccion-imagenes h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 32px; /* Tamaño título proyectos */
+    margin-bottom: 20px; /* Margen inferior */
 }
 
-/* Contenedor de tarjetas que las alinea en fila y permite envolverlas en pantallas pequeñas */
 .tarjetas-imagenes {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
-    width: 100%;
+    display: flex; /* En fila */
+    justify-content: space-between; /* Distribuye las fotos a los extremos */
+    flex-wrap: wrap; /* Las fotos bajan si no caben */
+    gap: 24px; /* Espacio entre fotos */
+    width: 100%; /* Ancho total */
 }
 
-/* Tarjeta individual: mantiene la imagen recortada en esquinas redondeadas */
 .tarjeta-imagen {
-    position: relative;
-    flex: 1 1 48%; /* cada tarjeta intenta ocupar cerca de la mitad del ancho */
-    min-width: 320px;
-    border-radius: 28px;
-    overflow: hidden;
+    position: relative; /* Base para posicionar el contenido (h2, p) encima */
+    flex: 1 1 48%; /* Intenta ocupar el 48% para que quepan 2 fotos por fila */
+    min-width: 320px; /* No permite que se hagan más pequeñas que 320px */
+    border-radius: 28px; /* Bordes muy redondeados */
+    overflow: hidden; /* Corta la imagen al llegar al borde redondeado */
 }
 
-/* Imagen de la tarjeta: llena el ancho y mantiene la proporción recortando si es necesario */
 .tarjeta-imagen img {
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 520px; /* Altura fija para que todas las fotos se vean iguales */
+    object-fit: cover; /* Ajusta la imagen para cubrir el espacio sin deformarse */
 }
 
-/* Contenido de texto sobre la imagen, colocado en la parte inferior de la tarjeta */
 .tarjeta-imagen-contenido {
-    position: absolute;
-    bottom: 30px;
-    left: 60px;
-    right: 60px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    position: absolute; /* Coloca el texto encima de la imagen */
+    bottom: 30px; /* Lo pega a la parte inferior con margen */
+    left: 60px; /* Margen izquierdo */
+    right: 60px; /* Margen derecho */
+    color: #fff; /* Texto blanco */
+    display: flex; /* Flex interno */
+    flex-direction: column; /* Apila los textos */
+    gap: 12px; /* Separación entre líneas */
 }
 
-/* Insignia de categoría con fondo rojo y bordes redondeados */
 .insignia-imagen {
-    background: #dc2626;
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 300px;
-    font-size: 14px;
+    background: #dc2626; /* Fondo rojo para la etiqueta del servicio */
+    color: #fff; /* Texto blanco */
+    padding: 10px 18px; /* Relleno de la etiqueta */
+    border-radius: 300px; /* Forma de píldora */
+    font-size: 14px; /* Tamaño letra pequeño */
 }
 
-/* Título grande dentro de la tarjeta */
 .tarjeta-imagen-contenido h2 {
-    margin: 0;
-    font-size: 40px;
-    line-height: 1.05;
+    margin: 0; /* Quita márgenes por defecto */
+    font-size: 40px; /* Título del proyecto muy grande */
+    line-height: 1.05; /* Interlineado cerrado */
 }
 
-/* Descripción debajo del título */
 .tarjeta-imagen-descripcion {
-    margin: 0;
-    max-width: 720px;
-    font-size: 18px;
+    margin: 0; /* Quita márgenes */
+    max-width: 720px; /* Limita el ancho del párrafo descriptivo */
+    font-size: 18px; /* Tamaño fuente */
 }
 
-/* Fila de datos pequeños (ubicación, fecha) */
 .tarjeta-imagen-datos {
-    display: flex;
-    font-size: 16px;
+    display: flex; /* Alinea ubicación y año en línea */
+    font-size: 16px; /* Tamaño fuente */
 }
 
-/* Iconos y texto alineados dentro de la fila de datos */
 .dato-imagen {
-    display: inline-flex;
-    align-items: center;
+    display: inline-flex; /* Alinea icono y texto del dato */
+    align-items: center; /* Centrado vertical */
 }
 
+/* ==========================================================================
+   CONTACTO Y FORMULARIO
+   ========================================================================== */
 .container-contacto {
-    padding: 60px 20px;
-    background: #f5f5f5;
-    text-align: center;
+    padding: 60px 20px; /* Espacio de la sección */
+    background: #f5f5f5; /* Fondo gris claro para diferenciarla */
+    text-align: center; /* Centra los títulos */
 }
 
 .container-contacto h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 32px; /* Tamaño título */
+    margin-bottom: 10px; /* Margen inferior */
 }
 
 .subtitulo-contacto {
-    margin-bottom: 40px;
-    color: #555;
+    margin-bottom: 40px; /* Espacio antes de los datos */
+    color: #555; /* Gris medio */
 }
 
-/* GRID */
 .grid-contacto {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    text-align: left;
+    display: grid; /* Divide la sección en dos columnas */
+    grid-template-columns: 1fr 1fr; /* Columna izquierda y columna derecha iguales */
+    gap: 40px; /* Espacio entre info y formulario */
+    text-align: left; /* El texto dentro de las columnas se alinea a la izquierda */
 }
 
-/* IZQUIERDA */
 .info-contacto h3 {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Espacio bajo subtítulo */
 }
 
 .item-contacto {
-    display: flex;
-    gap: 15px;
-    margin: 20px 0;
+    display: flex; /* Icono al lado del texto */
+    gap: 15px; /* Separación */
+    margin: 20px 0; /* Margen vertical */
 }
 
 .icono {
-    font-size: 22px;
+    font-size: 22px; /* Tamaño del icono */
 }
 
 .horario {
-    margin-top: 20px;
-    background: #eee;
-    padding: 15px;
-    border-radius: 10px;
+    margin-top: 20px; /* Separación superior */
+    background: #eee; /* Fondo gris un poco más oscuro */
+    padding: 15px; /* Relleno */
+    border-radius: 10px; /* Redondeo */
 }
 
-/* FORMULARIO */
 .formulario-contacto {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
+    background: #fff; /* Fondo blanco para el formulario */
+    padding: 25px; /* Relleno interno */
+    border-radius: 12px; /* Redondeo de esquinas */
 }
 
 .formulario-contacto label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    display: block; /* Ocupa toda la línea */
+    margin-top: 15px; /* Margen superior */
+    margin-bottom: 5px; /* Margen respecto al input */
 }
 
 .formulario-contacto input,
 .formulario-contacto select,
 .formulario-contacto textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    width: 100%; /* Los campos ocupan todo el ancho del formulario */
+    padding: 10px; /* Espacio interno para escribir */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Redondeo suave */
 }
 
 .formulario-contacto textarea {
-    height: 100px;
+    height: 100px; /* Altura inicial fija del área de mensaje */
 }
 
 .fila {
-    display: flex;
-    gap: 15px;
+    display: flex; /* Coloca Nombre y Email en la misma fila */
+    gap: 15px; /* Separación entre ambos */
 }
 
 .fila div {
-    flex: 1;
+    flex: 1; /* Ambos campos crecen para ocupar el 50% de la fila */
 }
 
 .formulario-contacto button {
-    margin-top: 20px;
-    width: 100%;
-    background: red;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
+    margin-top: 20px; /* Separación respecto al mensaje */
+    width: 100%; /* Botón de ancho total */
+    background: red; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    border: none; /* Quita bordes por defecto */
+    padding: 12px; /* Grosor del botón */
+    border-radius: 8px; /* Redondeo */
+    cursor: pointer; /* Cursor de mano */
 }
 
-/*Visualizacion en telefono*/
-@media (max-width: 600px) {
-
-    .container-contacto {
-        padding: 40px 15px;
-    }
-
-    .container-contacto h2 {
-        font-size: 24px;
-    }
-
-    .subtitulo-contacto {
-        font-size: 14px;
-        margin-bottom: 25px;
-    }
-
-    /* todo en una columna */
-    .grid-contacto {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    /* Items contacto más compactos */
-    .item-contacto {
-        gap: 10px;
-        align-items: flex-start;
-    }
-
-    .icono {
-        font-size: 20px;
-    }
-
-    /* FORM */
-    .formulario-contacto {
-        padding: 15px;
-    }
-
-    /* Inputs uno debajo del otro */
-    .fila {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .formulario-contacto input,
-    .formulario-contacto select,
-    .formulario-contacto textarea {
-        font-size: 14px;
-        padding: 9px;
-    }
-
-    .formulario-contacto button {
-        padding: 12px;
-        font-size: 15px;
-    }
-
-    /* Caja horario */
-    .horario {
-        padding: 12px;
-        font-size: 14px;
-    }
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+    background: #f00000; /* Rojo intenso para el pie de página */
+    color: #fff; /* Texto blanco */
+    width: 100%; /* Ancho total */
+    padding: 30px 0; /* Espacio arriba y abajo */
 }
 
-/* Footer */
-/* Reset básico */
-body { margin: 0; padding: 0; }
-
-/* Estructura Base del Footer */
-footer {
-    background: #f00000;
-    color: #fff;
-    width: 100%;
-    padding: 30px 0;
-}
-
-/* Contenedor de Columnas */
 .footer-contenido {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    display: flex; /* Alinea las columnas del footer en fila */
+    justify-content: space-between; /* Distribuye el espacio uniformemente */
+    max-width: 1200px; /* Limita el ancho en pantallas grandes */
+    margin: 0 auto; /* Centra el contenido */
+    padding: 0 20px; /* Margen lateral */
 }
 
-@media (max-width: 600px){
-    .footer-contenido{
-        flex-direction:column-reverse;
-        align-items:unset;
-    }
-}
-
-
-/* Estilo para cada columna */
 .footer-col {
-    flex: 1;
-    text-align: left;
+    flex: 1; /* Todas las columnas ocupan el mismo ancho base */
+    text-align: left; /* Alineación a la izquierda */
 }
 
 .footer-col h4 {
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 15px; /* Espacio inferior título footer */
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* Línea blanca decorativa transparente */
 }
 
-@media (max-width: 600px){
-    .footer-col h4{
-        margin-top: 40px;
-    }
-}
+.footer-col ul { list-style: none; padding: 0; } /* Quita puntos y relleno de listas del footer */
+.footer-col li { margin-bottom: 8px; font-size: 14px; } /* Estilo para los ítems del footer */
 
-
-
-.footer-col ul { list-style: none; padding: 0; }
-.footer-col li { margin-bottom: 8px; font-size: 14px; }
-
-/* Barra de Copyright */
 .footer-bottom {
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    margin-top: 20px;
-    padding-top: 15px;
+    text-align: center; /* Centra el copyright */
+    border-top: 1px solid rgba(255,255,255,0.1); /* Línea divisoria superior */
+    margin-top: 20px; /* Margen respecto a las columnas */
+    padding-top: 15px; /* Espacio interno */
 }
 
-.footer-link{
-    color: inherit;
-    text-decoration: none;
-    transition: 0.3s;
-    
+.footer-link {
+    color: inherit; /* Hereda el color blanco del padre */
+    text-decoration: none; /* Sin subrayado */
+    transition: 0.3s; /* Suaviza cambios (como hovers) */
 }
 
-.footer-link.hover {
-    color: #f00000;
-    text-decoration: underline;
-}
-
-html   {
-    scroll-behavior: smooth;
-}
-
+/* ==========================================================================
+   SCROLL Y AJUSTES
+   ========================================================================== */
 #nosotros,
 #proceso-atencion,
 #proyectos,
 #formulario-contacto {
-    scroll-margin-top: 40px; /* Ajusta según altura de barra-superior + barra-navegacion */
+    scroll-margin-top: 40px; /* Agrega un margen arriba al navegar para que el título no quede tapado */
 }
 
-/* Inicio: el título “Nuestros Servicios” queda arriba del área visible (sin la portada) */
 #nuestros-servicios {
-    scroll-margin-top: 0;
+    scroll-margin-top: 0; /* Quita el margen de scroll para esta sección específica */
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (ADAPTATIVO)
+   ========================================================================== */
+@media (max-width: 600px) {
+    /* Estas reglas solo se aplican cuando la pantalla es menor a 600px */
+    .barra-superior, 
+    .barra-navegacion, 
+    .grid-contacto, 
+    .footer-contenido,
+    .fila {
+        flex-direction: column; /* Cambia todo de horizontal a vertical en móviles */
+    }
+
+    .barra-navegacion-links {
+        display: flex; /* Asegura flex */
+        flex-wrap: wrap; /* Permite que los links del menú se dividan en varias filas */
+        justify-content: center; /* Centra los links en móvil */
+        margin-top: 13px; /* Espacio superior respecto al logo */
+    }
+
+    .logo img {
+        margin-top: -10px; /* Ajuste fino de la posición del logo en móvil */
+    }
+
+    .container-contacto {
+        padding: 40px 15px; /* Reduce los rellenos en móvil para aprovechar el espacio */
+    }
+
+    .container-contacto h2 {
+        font-size: 24px; /* Reduce el tamaño del título en móvil */
+    }
+
+    .grid-contacto {
+        grid-template-columns: 1fr; /* Fuerza a que el grid de contacto sea de una sola columna */
+    }
+
+    .formulario-contacto {
+        padding: 15px; /* Reduce relleno del formulario */
+    }
+
+    .footer-contenido {
+        flex-direction: column-reverse; /* En móvil, pone el logo de Hexacall al final del bloque */
+    }
+
+    .footer-col h4 {
+        margin-top: 40px; /* Agrega separación entre bloques del footer en móvil */
+    }
+}
+
+@media (min-width: 768px) {
+    /* Reglas para tablets y pantallas medianas */
+    .card-container-proceso-trabajo {
+        grid-auto-columns: 80%; /* Ajusta el tamaño de columnas automáticas */
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+        gap: 20px; /* Separación */
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Reglas para monitores grandes */
+    .card-container-proceso-trabajo {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    }
+}
+
+.seccion-nosotros {
+  padding: 70px 20px;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.contenedor-nosotros {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.seccion-nosotros h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.seccion-nosotros p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: var(--text-secondary);
 }
