@@ -17,13 +17,14 @@
         <p>📅  Lunes - Viernes: 8:00 AM - 18:00 PM</p>
     </section>
 
-    <!-- Navegacion -->
+    <!-- Navegacion con anchor links - requieren scroll-margin-top en CSS -->
     <nav class="barra-navegacion">
         <div class="logo">
             <img src="assets/logo-empresa.png" alt="Logo de la Empresa">
         </div>
 
         <ul class="barra-navegacion-links">
+            <!-- Los href #id necesitan id="id" en elemento destino -->
             <li><a href="#nuestros-servicios">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#proceso-atencion">Servicios</a></li>
@@ -33,8 +34,9 @@
 
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="portada">
+        <!-- Capa oscura: position absolute cubre imagen completa -->
         <div class="filtro"></div>
 
         <div class="portada-content">
@@ -42,6 +44,7 @@
                 Construimos el <br>
                 <span>Futuro Industrial</span>
             </h1>
+            <!-- Section "Nosotros" flotando sobre hero image - background: transparent en CSS -->
             <section id="nosotros" class="seccion-nosotros">
                 <div class="contenedor-nosotros">
                 <h2><strong>Sobre Nosotros</strong></h2>
@@ -73,7 +76,7 @@
             <h2 id="nuestros-servicios" class="titulo-nuestros-servicios">Nuestros Servicios</h2>
             <p>Soluciones integrales para tus necesidades de montajes industriales, obras civiles y mantenimiento industrial.</p>
 
-            
+            <!-- Grid responsivo: repeat(auto-fit, minmax()) auto-ajusta columnas -->
             <div class="contenedor-tarjetas">
                 <div class="card">
                     <div class="card-icon">🏗️</div>
@@ -113,6 +116,7 @@
             </div>
         </div>
     </section>
+    <!-- Sección "¿Por Qué Elegirnos?" - id duplicado aquí y arriba (se usa el primero por orden DOM) -->
     <section id="nosotros" class="container-por-que">
     <div class="content-wrapper">
         <h2 class="title">¿Por Qué Elegirnos?</h2>
@@ -137,11 +141,13 @@
         </div>
     </div>
     </section>
+    <!-- Proceso de Atención - anchor link requerido para navegación -->
     <div id="proceso-atencion">
     <section class="container-proceso-trabajo ">
         <h2 class="title">Proceso de Atención a Clientes Particulares</h2>
         <p class="subtitle">Un proceso claro y eficiente para brindar soluciones personalizadas desde la solicitud hasta la formalización del servicio.</p>
-        <div class="carousel-wrapper">    
+        <div class="carousel-wrapper">
+            <!-- Carrusel scrollable horizontal: flex + overflow-x auto + scroll-snap -->
             <div class="card-container-proceso-trabajo">
                 <div class="card-style-proceso-trabajo">
                     <div class="card-icon">📄</div>
@@ -373,6 +379,48 @@
         <p>© 2026 Hexacall. Todos los derechos reservados.</p>
     </div>
     </footer>
+
+    <!-- Botón de alternancia de tema oscuro - position: fixed en CSS siempre visible -->
+    <button id="toggle-dark-mode" title="Alternar modo oscuro">🌙</button>
+
+    <script>
+        /* Dark Mode System:
+           - Tema guardado en localStorage['theme']
+           - setAttribute('data-theme', 'dark'|'light') en documentElement
+           - CSS usa [data-theme="dark"] para selectores de tema
+        */
+        
+        // Recupera tema guardado o usa 'light' como defecto
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const htmlElement = document.documentElement;
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateButtonIcon(savedTheme);
+        }
+
+        // Cambiar icono del botón según tema actual
+        function updateButtonIcon(theme) {
+            const button = document.getElementById('toggle-dark-mode');
+            button.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Toggle tema + guardar en localStorage para persistencia
+        function toggleTheme() {
+            const htmlElement = document.documentElement;
+            const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme); // persiste entre sesiones
+            updateButtonIcon(newTheme);
+        }
+
+        // Click listener del botón
+        document.getElementById('toggle-dark-mode').addEventListener('click', toggleTheme);
+
+        // Ejecutar al cargar página
+        initTheme();
+    </script>
 </body>
 </html>
 
