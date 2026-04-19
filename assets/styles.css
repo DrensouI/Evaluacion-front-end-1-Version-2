@@ -364,11 +364,13 @@ html {
     background: var(--bg-main);
     padding: 40px 20px;
     transition: background-color 0.3s ease;
+    color: var(--text-main); /* asegura visibilidad de todos los textos en dark mode */
 }
 
 .seccion-imagenes h1 {
     font-size: 32px;
     margin-bottom: 20px;
+    color: var(--text-main); /* adapta color según tema (light/dark) */
 }
 
 .tarjetas-imagenes {
@@ -441,11 +443,13 @@ html {
     background: var(--bg-secondary);
     text-align: center;
     transition: background-color 0.3s ease;
+    color: var(--text-main); /* asegura visibilidad en dark mode */
 }
 
 .container-contacto h2 {
     font-size: 32px;
     margin-bottom: 10px;
+    color: var(--text-main); /* adapta color según tema */
 }
 
 .subtitulo-contacto {
