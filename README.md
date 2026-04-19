@@ -20,3 +20,6 @@ Integrantes del grupo con sus respectivos roles.
 Benjamin: Lider | encargado de las siguientes secciones 1,2,3,6
 Alonso: Encargado de  las sigueintes secciones 4,7,9 y proporcionar informacion de la empresa
 Sofia: Encargada de las siguientes secciones 5,8 y diseñadora de template de la pagina
+
+
+Link de la pagina: https://drensoui.github.io/Evaluacion-front-end-1-Version-2/

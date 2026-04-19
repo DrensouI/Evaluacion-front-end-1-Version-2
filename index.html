@@ -382,7 +382,6 @@
     </div>
     </footer>
 
-    <!-- Botón de alternancia de tema oscuro - position: fixed en CSS siempre visible -->
     <button id="toggle-dark-mode" title="Alternar modo oscuro">🌙</button>
 
     <script>
@@ -400,13 +399,11 @@
             updateButtonIcon(savedTheme);
         }
 
-        // Cambiar icono del botón según tema actual
         function updateButtonIcon(theme) {
             const button = document.getElementById('toggle-dark-mode');
             button.textContent = theme === 'dark' ? '☀️' : '🌙';
         }
 
-        // Toggle tema + guardar en localStorage para persistencia
         function toggleTheme() {
             const htmlElement = document.documentElement;
             const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
@@ -417,10 +414,8 @@
             updateButtonIcon(newTheme);
         }
 
-        // Click listener del botón
         document.getElementById('toggle-dark-mode').addEventListener('click', toggleTheme);
 
-        // Ejecutar al cargar página
         initTheme();
     </script>
 </body>

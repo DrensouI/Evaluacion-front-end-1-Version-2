@@ -1,6 +1,10 @@
 /* Google Fonts: Roboto (body 400/500) + Poppins (titles 500/600/700) - WCAG AA accesibilidad */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap');
 
+/* ============================================================
+   VARIABLES DE TEMA (CLARO / OSCURO)
+   ============================================================ */
+
 /* Variables para tema claro y oscuro - compatible con localStorage */
 :root {
   --bg-main: #ffffff;
@@ -29,6 +33,10 @@
   --button-text: #ffffff;
 }
 
+/* ============================================================
+   RESET GLOBAL
+   ============================================================ */
+
 /* Reset global - asegura consistencia entre navegadores */
 * { 
     margin: 0;
@@ -40,6 +48,10 @@
 html {
     scroll-behavior: smooth; /* smooth scroll al hacer click en anchor links (#id) */
 }
+
+/* ============================================================
+   BARRA SUPERIOR (ANUNCIO / INFO RÁPIDA)
+   ============================================================ */
 
 .barra-superior {
     background: rgb(255, 0, 0);
@@ -53,6 +65,10 @@ html {
     color: white;
     text-decoration: none;
 }
+
+/* ============================================================
+   HEADER / BARRA DE NAVEGACIÓN
+   ============================================================ */
 
 .barra-navegacion {
     background: var(--bg-main);
@@ -86,6 +102,10 @@ html {
     color: var(--text-main);
     font-weight: 500;
 }
+
+/* ============================================================
+   HERO / PORTADA
+   ============================================================ */
 
 .portada {
     position: relative;
@@ -140,6 +160,41 @@ html {
 .portada .titulo-nuestros-servicios {
     margin-top: 90px;
 }
+
+/* ============================================================
+   SECCIÓN NOSOTROS
+   ============================================================ */
+
+/* Background transparent permite ver imagen hero detrás */
+.seccion-nosotros {
+  padding: 70px 20px;
+  background: transparent; /* flota sobre hero image */
+  color: white;
+  transition: all 0.3s ease; /* mantiene consistencia con dark mode aunque sea transparent */
+}
+
+.contenedor-nosotros {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.seccion-nosotros h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.seccion-nosotros p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================================
+   CARDS DE SERVICIOS
+   ============================================================ */
 
 /* auto-fit responsivo: ajusta columnas automáticamente según pantalla */
 .contenedor-tarjetas {
@@ -228,6 +283,10 @@ html {
     opacity: .8;
 }
 
+/* ============================================================
+   SECCIÓN "¿POR QUÉ ELEGIRNOS?"
+   ============================================================ */
+
 .container-por-que {
     background: #d90000;
     padding: 60px 20px;
@@ -278,6 +337,10 @@ html {
 .icon-por-que {
     font-size: 28px;
 }
+
+/* ============================================================
+   SECCIÓN PROCESO DE TRABAJO (CARRUSEL)
+   ============================================================ */
 
 .container-proceso-trabajo {
     background: var(--bg-main);
@@ -355,6 +418,10 @@ html {
   margin: 0 auto;
   padding: 0 16px;
 }
+
+/* ============================================================
+   SECCIÓN DE IMÁGENES / PROYECTOS
+   ============================================================ */
 
 .seccion-imagenes {
     display: flex;
@@ -437,6 +504,10 @@ html {
     display: inline-flex;
     align-items: center;
 }
+
+/* ============================================================
+   SECCIÓN DE CONTACTO / FORMULARIO
+   ============================================================ */
 
 .container-contacto {
     padding: 60px 20px;
@@ -546,6 +617,10 @@ html {
     opacity: 0.9;
 }
 
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
 .footer {
     background: #f00000;
     color: #fff;
@@ -581,6 +656,23 @@ html {
     font-size: 16px; 
 }
 
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.footer-link {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* ============================================================
+   BOTÓN FLOTANTE DARK MODE
+   ============================================================ */
+
 /* Botón dark mode flotante - siempre visible (z-index: 999) */
 #toggle-dark-mode {
     position: fixed; /* se fija a viewport, no scroll */
@@ -612,18 +704,9 @@ html {
     transform: scale(0.95);
 }
 
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    margin-top: 20px;
-    padding-top: 15px;
-}
-
-.footer-link {
-    color: inherit;
-    text-decoration: none;
-    transition: 0.3s;
-}
+/* ============================================================
+   ANCHOR LINKS - SCROLL OFFSET
+   ============================================================ */
 
 /* scroll-margin-top evita que navbar tape heading al usar anchor links */
 #nosotros,
@@ -636,6 +719,10 @@ html {
 #nuestros-servicios {
     scroll-margin-top: 0; /* no necesita offset */
 }
+
+/* ============================================================
+   RESPONSIVE - MEDIA QUERIES
+   ============================================================ */
 
 /* Mobile first: 600px breakpoint */
 @media (max-width: 600px) {
@@ -695,31 +782,4 @@ html {
     .card-container-proceso-trabajo {
         grid-template-columns: repeat(3, 1fr);
     }
-}
-
-/* Background transparent permite ver imagen hero detrás */
-.seccion-nosotros {
-  padding: 70px 20px;
-  background: transparent; /* flota sobre hero image */
-  color: white;
-  transition: all 0.3s ease; /* mantiene consistencia con dark mode aunque sea transparent */
-}
-
-.contenedor-nosotros {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.seccion-nosotros h2 {
-  font-size: 32px;
-  margin-bottom: 25px;
-  color: white;
-}
-
-.seccion-nosotros p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 18px;
-  color: rgba(255, 255, 255, 0.9);
 }
