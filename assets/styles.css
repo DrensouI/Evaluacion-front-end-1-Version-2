@@ -8,21 +8,22 @@
 
 
 
+
 /* contacto, correo, horario */
-.top-bar{
+.barra-superior{
     background: rgb(255, 0, 0);
     display: flex; /*Basicamente que sea flexible donde se pueda alinear en fila y facil de ordenar*/
     justify-content: space-between; /*Que los elementos tengan una separación considerable*/
     align-items: center; /*Centrarlos verticalmente*/
     padding: 10px 40px; /*Basicamente se adapta al contenido*/
 }
-.top-bar p{ /* Basicamente afecta al tipo de texto que quieres en si (solo los que usen la clase top-bar)*/
+.barra-superior p{ /* Basicamente afecta al tipo de texto que quieres en si (solo los que usen la clase top-bar)*/
     color: white;
     text-decoration: none;    
 }
 
 @media (max-width: 600px){
-    .top-bar{
+    .barra-superior{
         flex-direction: column;
     }
 }
@@ -73,6 +74,7 @@
 
 
 
+
 .barra-navegacion-links {
     display: flex;
     gap: 30px;
@@ -112,7 +114,7 @@
 
 
 /*      FILTRO ENCIMA DE LA PORTADA      */
-.overlay {
+.filtro {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -120,6 +122,18 @@
         rgba(0, 0, 0, 0.6)
     );
 }
+
+
+.caracteristicas {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 18px;
+}
+
+
+
+
 
 .portada-content {
     position: relative;
@@ -151,7 +165,7 @@
 
 /* Cards */
 /* Contenedor principal de las cards. Crea un grid responsive que ajusta la cantidad de tarjetas por fila según el ancho disponible. */
-.card-container {
+.contenedor-tarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
@@ -244,14 +258,6 @@
 }
 
 
-
-
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    font-size: 18px;
-}
 
 /* Contenedor con el fondo rojo */ /* SECCION DE SOFIA*/
 .container-por-que {
@@ -752,7 +758,7 @@ html   {
 #proceso-atencion,
 #proyectos,
 #formulario-contacto {
-    scroll-margin-top: 40px; /* Ajusta según altura de top-bar + barra-navegacion */
+    scroll-margin-top: 40px; /* Ajusta según altura de barra-superior + barra-navegacion */
 }
 
 /* Inicio: el título “Nuestros Servicios” queda arriba del área visible (sin la portada) */
